@@ -38,3 +38,52 @@ main {
   margin-left: 5%;
   flex-direction: column;
 }
+
+article {
+  padding: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 3px solid darkslategrey;
+}
+
+header {
+  border-bottom: 3px solid darkslategrey;
+}
+
+div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+span {
+  display: flex;
+  align-items: center;
+}
+
+div :nth-child(1) img {
+  padding-right: 10px;
+  width: 35%;
+}
+
+div :nth-child(1):nth-child(2) {
+  padding-left: 10px;
+}
+
+div :nth-child(2) p {
+  color: silver;
+}
+
+header p {
+  margin-bottom: 34px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer p {
+  margin-top: 10px;
+  font-size: medium;
+}
