@@ -1,6 +1,8 @@
 $(() => {
   console.log( "ready!" );
 
+  $("#error-msg").hide();
+
   /*
   * Client-side JS logic goes here
   * jQuery is already loaded
@@ -26,7 +28,7 @@ $(() => {
 
  let $output = `<article>
  <header>
-  <div>
+  <div id="handle">
   <span>
       <img src=${tweet.user.avatars}>
       <p>${tweet.user.name}</p>
@@ -106,12 +108,16 @@ $( ".new-tweet form" ).submit(function ( event ) {
   // event.target.value
   const rawText = $('#tweet-text').val();
   const output = $(this).serialize()
-  console.log(output)
+  // console.log(output)
+  // console.log($("#error-msg p").text("hiii"));
   if (rawText === "") {
-    alert("Enter text!");
+    $("#error-msg p").text("Say something!")
+    $( "#error-msg" ).show();
   } else if (rawText.length > 140) {
-    alert("Too many characters!");
+    $("#error-msg p").text("Too verbose!")
+    $( "#error-msg" ).show();
   } else {
+    $( "#error-msg" ).hide();
     $.ajax({
       method: "POST",
       url: "/tweets",
