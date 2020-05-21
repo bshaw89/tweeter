@@ -69,30 +69,30 @@ const timeStamp = function(date) {
 }
 
 
- const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1589749532000
-  }
-]
+//  const data = [
+//   {
+//     "user": {
+//       "name": "Newton",
+//       "avatars": "https://i.imgur.com/73hZDYK.png"
+//       ,
+//       "handle": "@SirIsaac"
+//     },
+//     "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     "created_at": 1461116232227
+//   },
+//   {
+//     "user": {
+//       "name": "Descartes",
+//       "avatars": "https://i.imgur.com/nlhLi3I.png",
+//       "handle": "@rd" },
+//     "content": {
+//       "text": "Je pense , donc je suis"
+//     },
+//     "created_at": 1589749532000
+//   }
+// ]
 
 $( ".new-tweet form" ).submit(function ( event ) {
   event.preventDefault();
@@ -116,8 +116,18 @@ $.ajax({
 //       $button.replaceWith(morePostsHtml);
 //     });
 
- renderTweets(data);
+const loadTweets = function() {
+  $.ajax('/tweets', { method: 'GET' })
+  .then(function (tweetsJSON) {
+    console.log("Success: ", renderTweets(tweetsJSON));
+  })
+}
+loadTweets();
+
+//  renderTweets(data);
 
 
  
 });
+
+// :nth-child won't work because more tweets keep getting added
