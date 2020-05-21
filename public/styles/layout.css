@@ -48,6 +48,7 @@ article {
   padding-top: 5px;
   padding-bottom: 5px;
   border: 3px solid darkslategrey;
+  margin-bottom: 30px;
 }
 
 div :nth-child(2) p {
@@ -88,6 +89,11 @@ div :nth-child(1):nth-child(2) {
   padding-left: 10px;
 }
 
+section {
+  width: 90%;
+  
+}
+
 
 header p {
   margin-bottom: 34px;
@@ -101,4 +107,23 @@ footer {
 footer p {
   margin-top: 10px;
   font-size: medium;
+}
+
+footer span {
+  display: flex;
+  align-items: flex-start;
+  font-size: 60%;
+  padding-top: 10px;
+}
+
+footer span :nth-child(1) {
+  padding-right: 10px;
+}
+
+footer span :nth-child(2) {
+  padding-right: 10px;
+}
+
+.tweets-all {
+  margin-bottom: 30px;
 }
