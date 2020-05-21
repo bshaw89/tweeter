@@ -16,6 +16,12 @@ $(() => {
      }
     }
 
+    const escape =  function(str) {
+      let div = document.createElement('div');
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    }
+
  const createTweetElement = function(tweet) {
 
  let $output = `<article>
@@ -29,7 +35,7 @@ $(() => {
       <p>${tweet.user.handle}</p>
     </span>
   </div>
-  <p>${tweet.content.text}</p>
+  <p>${escape(tweet.content.text)}</p>
 </header>
 <footer>
   <p>${timeStamp(tweet.created_at)}</p>
@@ -98,11 +104,12 @@ const timeStamp = function(date) {
 $( ".new-tweet form" ).submit(function ( event ) {
   event.preventDefault();
   // event.target.value
+  const rawText = $('#tweet-text').val();
   const output = $(this).serialize()
   console.log(output)
-  if (output === "text=") {
+  if (rawText === "") {
     alert("Enter text!");
-  } else if (output.length > 145) {
+  } else if (rawText.length > 140) {
     alert("Too many characters!");
   } else {
     $.ajax({
