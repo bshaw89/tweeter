@@ -98,15 +98,24 @@ $( ".new-tweet form" ).submit(function ( event ) {
   event.preventDefault();
   // event.target.value
   const output = $(this).serialize()
-$.ajax({
-  method: "POST",
-  url: "/tweets",
-  // data: { text: "text" }
-  data: output
-})
-  .done(function () {
-    console.log(this.data);
-  })
+  console.log(output)
+  if (output === "text=") {
+    alert("Enter text!");
+  } else if (output.length > 145) {
+    alert("Too many characters!");
+  }
+  
+  else {
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      // data: { text: "text" }
+      data: output
+    })
+    .done(function (data) {
+      console.log(data);
+    })
+  }
 })
 
 
@@ -131,3 +140,4 @@ loadTweets();
 });
 
 // :nth-child won't work because more tweets keep getting added
+// currently adds random user when posting new tweet; need to refresh page to see
