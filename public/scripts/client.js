@@ -9,7 +9,8 @@ $(() => {
 
 
   const renderTweets = function(tweetsArr) {
-    for (let tweet of tweetsArr) {
+    let tweetsArrRev = tweetsArr.reverse();
+    for (let tweet of tweetsArrRev) {
       let output = createTweetElement(tweet);
       $(`.tweets-all`).append(output);
      }
@@ -103,9 +104,7 @@ $( ".new-tweet form" ).submit(function ( event ) {
     alert("Enter text!");
   } else if (output.length > 145) {
     alert("Too many characters!");
-  }
-  
-  else {
+  } else {
     $.ajax({
       method: "POST",
       url: "/tweets",
@@ -113,7 +112,9 @@ $( ".new-tweet form" ).submit(function ( event ) {
       data: output
     })
     .done(function (data) {
-      console.log(data);
+      // console.log(data);
+      $('.tweets-all').empty();
+      $(loadTweets());
     })
   }
 })
@@ -131,7 +132,7 @@ const loadTweets = function() {
     console.log("Success: ", renderTweets(tweetsJSON));
   })
 }
-loadTweets();
+// loadTweets();
 
 //  renderTweets(data);
 
