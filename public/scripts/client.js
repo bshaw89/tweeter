@@ -94,15 +94,21 @@ const timeStamp = function(date) {
   }
 ]
 
-$( ".new-tweet" ).submit(function ( event ) {
+$( ".new-tweet form" ).submit(function ( event ) {
   event.preventDefault();
-})
-
+  // event.target.value
+  const output = $(this).serialize()
 $.ajax({
   method: "POST",
-  url: "index.html",
-  data: "textarea"
+  url: "/tweets",
+  // data: { text: "text" }
+  data: output
 })
+  .done(function () {
+    console.log(this.data);
+  })
+})
+
 
 // $.ajax('index.html', { method: 'POST' }, data: { })
 //     .then(function (morePostsHtml) {
