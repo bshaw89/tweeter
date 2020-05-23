@@ -10,6 +10,15 @@ nav {
 
 nav :nth-child(2) {
   font-size: 18px;
+  flex-direction: column;
+}
+
+nav button {
+  border: none;
+}
+
+#new-tweet-icon {
+  color: red;
 }
 
 .nav-header {

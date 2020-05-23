@@ -95,7 +95,6 @@ section {
   
 }
 
-
 header p {
   margin-bottom: 34px;
 }
@@ -115,6 +114,11 @@ footer span {
   align-items: flex-start;
   font-size: 60%;
   padding-top: 10px;
+  visibility: hidden;
+}
+
+article:hover footer span {
+  visibility: visible;
 }
 
 footer span :nth-child(1) {
@@ -136,7 +140,6 @@ footer span :nth-child(2) {
   height: 1.5em;
   color: #D8000C;
   background-color: #FFD2D2;
-
 }
 
 .fa-times-circle {

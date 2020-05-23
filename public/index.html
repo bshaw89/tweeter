@@ -36,7 +36,9 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <span>Write a new tweet</span>
+      <span>Write a new tweet
+        <button type="submit"><i class="fas fa-angle-double-down" id="new-tweet-icon"></i></button>
+      </span>
     </nav>
 
     <header class="nav-header">
@@ -54,10 +56,10 @@
       <section class="new-tweet">
         <form action="/tweets/" method="POST">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <textarea name="text" id="tweet-text" autofocus></textarea>
           <div>
             <button type="submit">Tweet</button>
-            <label for="tweet-text" id="error-msg"><i class="fas fa-times-circle" id="err-icon"></i><p>Hello</p></label>
+            <label for="tweet-text" id="error-msg"><i class="fas fa-times-circle" id="err-icon"></i><p></p></label>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
