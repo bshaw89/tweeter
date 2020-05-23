@@ -11,8 +11,13 @@ $(() => {
   */
 
   $( "#new-tweet-icon" ).click(function() {
-    $(".container form").toggle();
+    $(".container form").fadeToggle();
     $("#tweet-text").focus();
+    // $(".container from").animate({
+    //   height: 10%
+    // }, function() {
+      
+    // });
   })
 
 
@@ -118,12 +123,12 @@ $( ".new-tweet form" ).submit(function ( event ) {
   // console.log($("#error-msg p").text("hiii"));
   if (rawText === "") {
     $("#error-msg p").text("Say something!")
-    $( "#error-msg" ).show();
+    $( "#error-msg" ).fadeIn().show();
   } else if (rawText.length > 140) {
     $("#error-msg p").text("Too verbose!")
     $( "#error-msg" ).show();
   } else {
-    $( "#error-msg" ).hide();
+    $( "#error-msg" ).fadeOut().hide();
     $.ajax({
       method: "POST",
       url: "/tweets",
@@ -133,7 +138,11 @@ $( ".new-tweet form" ).submit(function ( event ) {
     .done(function (data) {
       // console.log(data);
       $('.tweets-all').empty();
+      // reset form jQuery method
+      // $("textarea").val("");
+      // $("counter").val(140);
       $(loadTweets());
+      $(".new-tweet form").trigger("reset");
     })
   }
 })
