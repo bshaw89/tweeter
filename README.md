@@ -21,3 +21,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Timestamp
 Included a timestamp function which tracks when each post was made.
+
+## Screenshots
+
+!["Screenshot of tweet compose box"](https://github.com/bshaw89/tweeter/blob/master/docs/tweet-box-submit.png?raw=true)
+!["Screenshot of mobile layout + character limit"](https://github.com/bshaw89/tweeter/blob/master/docs/tweet-box-mobile.png?raw=true)
