@@ -40,6 +40,7 @@ main {
   background-color: #f4f1ec;
   margin-right: 5%;
   margin-left: 5%;
+  margin-top: 5%;
   flex-direction: column;
 }
 
@@ -51,7 +52,7 @@ article {
   margin-bottom: 30px;
 }
 
-#handle :nth-child(2) p {
+article #handle #usr-handle p {
   color: silver;
   visibility: hidden;
 }
@@ -61,11 +62,11 @@ article:hover {
   font-weight: bold;
 }
 
-article:hover #handle :nth-child(2) p {
+article:hover #handle #usr-handle p {
   visibility: visible; 
 }
 
-header {
+article header {
   border-bottom: 3px solid darkslategrey;
 }
 
@@ -80,12 +81,12 @@ span {
   align-items: center;
 }
 
-div :nth-child(1) img {
+article #avatar img {
   padding-right: 10px;
   width: 35%;
 }
 
-div :nth-child(1):nth-child(2) {
+article #usr-handle, #avatar {
   padding-left: 10px;
 }
 
@@ -140,4 +141,33 @@ footer span :nth-child(2) {
 
 .fa-times-circle {
   padding-right: 0.5em;
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+
+  .nav-header {
+    width: 40%;
+    margin-top: 4em;
+    margin-left: 2em;
+  }
+
+  .nav-header .image {
+    margin-top: 1em;
+  }
+
+  .nav-header .name {
+    margin-top: -1em;
+  }
+
+  body {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  main {
+    margin-top: 4em;
+    flex: 2;
+  }
 }

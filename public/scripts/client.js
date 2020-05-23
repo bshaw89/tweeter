@@ -29,11 +29,11 @@ $(() => {
  let $output = `<article>
  <header>
   <div id="handle">
-  <span>
+  <span id="avatar">
       <img src=${tweet.user.avatars}>
       <p>${tweet.user.name}</p>
     </span>
-    <span>
+    <span id="usr-handle">
       <p>${tweet.user.handle}</p>
     </span>
   </div>
@@ -155,3 +155,5 @@ const loadTweets = function() {
 
 // :nth-child won't work because more tweets keep getting added
 // currently adds random user when posting new tweet; need to refresh page to see
+// add slide animation to error message
+// switch px to em
