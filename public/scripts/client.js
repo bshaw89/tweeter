@@ -11,7 +11,7 @@ $(() => {
   */
 
   $( "#new-tweet-icon" ).click(function() {
-    $(".container form").show();
+    $(".container form").toggle();
     $("#tweet-text").focus();
   })
 
