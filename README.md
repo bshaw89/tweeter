@@ -15,3 +15,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- Chance
+- Body-parser
+- md5
+
+## Timestamp
+Included a timestamp function which tracks when each post was made.
