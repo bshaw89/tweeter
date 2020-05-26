@@ -70,18 +70,9 @@ $(() => {
   loadTweets();
   
   $("#error-msg").hide();
-  // $(".container form").hide();
-
-  /*
-  * Client-side JS logic goes here
-  * jQuery is already loaded
-  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
-  */
   
   // Hidden elements on page load. Click to reveal.
   $( "#new-tweet-icon" ).click(function() {
-    // $(".container form").fadeToggle();
-    // $("#tweet-text").focus();
     if ($(".container form").hasClass("show")) {
       $(".container form").removeClass("show");
     } else {
@@ -90,29 +81,29 @@ $(() => {
   });
 
   // submit new tweet form
-$( ".new-tweet form" ).submit(function(event) {
-  event.preventDefault();
-  const rawText = $('#tweet-text').val();
-  const output = $(this).serialize();
-  if (rawText === "") {
-    $("#error-msg p").text("Say something!");
-    $( "#error-msg" ).fadeIn().show();
-  } else if (rawText.length > 140) {
-    $("#error-msg p").text("Too verbose!");
-    $( "#error-msg" ).show();
-  } else {
-    $( "#error-msg" ).fadeOut().hide();
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: output
-    })
-      .done(function() {
-        $('.tweets-all').empty();
-        $(loadTweets());
-        $(".new-tweet form").trigger("reset");
-      });
-  }
-});
+  $( ".new-tweet form" ).submit(function(event) {
+    event.preventDefault();
+    const rawText = $('#tweet-text').val();
+    const output = $(this).serialize();
+    if (rawText === "") {
+      $("#error-msg p").text("Say something!");
+      $( "#error-msg" ).fadeIn().show();
+    } else if (rawText.length > 140) {
+      $("#error-msg p").text("Too verbose!");
+      $( "#error-msg" ).show();
+    } else {
+      $( "#error-msg" ).fadeOut().hide();
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        data: output
+      })
+        .done(function() {
+          $('.tweets-all').empty();
+          $(loadTweets());
+          $(".new-tweet form").trigger("reset");
+        });
+    }
+  });
 });
 

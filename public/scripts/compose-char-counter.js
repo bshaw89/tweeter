@@ -1,7 +1,5 @@
 $(document).ready(function() {
-  // --- our code goes here ---
   $("textarea").keyup(function() {
-    console.log($(this).closest("form").find(".counter").val());
     $(this).closest("form").find(".counter").val(140 - $(this).val().length);
 
     if ($(this).closest("form").find(".counter").val() <= 0) {
