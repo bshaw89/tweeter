@@ -8,6 +8,14 @@
 form {
   display: flex;
   flex-direction: column;
+  height: 0;
+  opacity: 0;
+  transition: all .30s ease-in-out;
+}
+
+form.show {
+  height: auto;
+  opacity: 1;
 }
 
 label {

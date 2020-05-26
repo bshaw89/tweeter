@@ -38,8 +38,6 @@ main {
   justify-content: center;
   align-items: center;
   background-color: #f4f1ec;
-  margin-right: 5%;
-  margin-left: 5%;
   margin-top: 5%;
   flex-direction: column;
 }
@@ -95,8 +93,9 @@ section {
   
 }
 
-header p {
+.tweets-all header p {
   margin-bottom: 34px;
+  word-break: break-word;
 }
 
 footer {
